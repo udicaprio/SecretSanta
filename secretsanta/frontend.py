@@ -15,14 +15,16 @@ def Hidden_mode(members, email):
 st.set_page_config(page_title="Secret Santa", page_icon = "🎅🏻")
 st.title('🎅🏻 Secret Santa 🎄')
 st.write('This app will allow you to organize the splitting for the secret santa. This is an open-source project, therefore you can contribute visiting our [GitHub page](https://github.com/udicaprio/SecretSanta)')
-members = st.text_input(label = 'Add the members name separated by comma (e.g.: Marco, Sivia, Sara)')
+members = st.text_input(label = 'Add the members name separated by comma (e.g.: Marco, Silvia, Sara)')
 
 mode = st.radio('Mode', ['Visible mode', 'Hidden mode'],
                 captions = ['The givers and receivers of the presents are visible to everyone',
                             'An email will be sent to the givers containing the name of their receiver'])
 
 if st.button('Go!', type = 'primary'):
-    if mode == 'Visible mode':
+    if len(members)==0:
+        st.write('⚠️ Please add name separated by comma in the list')
+    elif mode == 'Visible mode':
         Visible_mode(members)
     elif mode == 'Hidden mode':
         Hidden_mode(members, None)
