@@ -14,7 +14,7 @@ def Hidden_mode(members, email):
 
 st.set_page_config(page_title="Secret Santa", page_icon = "🎅🏻")
 st.title('🎅🏻 Secret Santa 🎄')
-st.write('This app will allow you to organize the splitting for the secret santa. This is an open-source project, therefore you can contribute visiting our [GitHub page](https://github.com/udicaprio/SecretSanta-CounterPresent)')
+st.write('This app will allow you to organize the splitting for the secret santa. This is an open-source project, therefore you can contribute visiting our [GitHub page](https://github.com/udicaprio/SecretSanta)')
 members = st.text_input(label = 'Add the members name separated by comma (e.g.: Marco, Sivia, Sara)')
 
 mode = st.radio('Mode', ['Visible mode', 'Hidden mode'],
