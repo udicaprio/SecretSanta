@@ -24,7 +24,10 @@ mode = st.radio('Mode', ['Visible mode', 'Hidden mode'],
 if st.button('Go!', type = 'primary'):
     if len(members)==0:
         st.write('⚠️ Please add name separated by comma in the list')
-    elif mode == 'Visible mode':
-        Visible_mode(members)
-    elif mode == 'Hidden mode':
-        Hidden_mode(members, None)
+    else:
+        if members[-1]==',':
+            members=members[:-1]
+        if mode == 'Visible mode':
+            Visible_mode(members)
+        elif mode == 'Hidden mode':
+            Hidden_mode(members, None)
